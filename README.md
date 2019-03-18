@@ -1,10 +1,13 @@
 # EC3882-G4-EM2019
 Proyectos realizados para la materia EC3882: Laboratorio de Proyectos 2.
 
+Grupo 4:
+
 Manuel Hurtado - 12-10004
 Daniela Rivas - 14-10914
 
 Profesor: Novel Certad
+
 
 
 PROYECTO I: OSCILOSCOPIO DIGITAL 
@@ -13,7 +16,7 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
 
 I.	Resumen: 
 
-Una vez acondicionada la señal, esta se recibe por el DEMOQE128, y este envía la señal a través del puerto serial empleando el protocolo RS-232. Sin embargo, la resolución del canal analógico es de 12 bits; por lo que se deben acomodar los 12 bits de cada canal en bytes en CodeWarrior, luego de habilitar las entradas y determinar el muestreo. Finalmente, a través de Processing se toman los bytes enviados, se arreglan nuevamente en sus 12 bits originales, y se grafican de manera que cumplan con los requisitos del proyecto.
+   Una vez acondicionada la señal, esta se recibe por el DEMOQE128, y este envía la señal a través del puerto serial empleando el protocolo RS-232. Sin embargo, la resolución del canal analógico es de 12 bits; por lo que se deben acomodar los 12 bits de cada canal en bytes en CodeWarrior, luego de habilitar las entradas y determinar el muestreo. Finalmente, a través de Processing se toman los bytes enviados, se arreglan nuevamente en sus 12 bits originales, y se grafican de manera que cumplan con los requisitos del proyecto.
 
 II.	Presentación de equipo a producir, especificaciones:
 
@@ -33,4 +36,32 @@ II.	Presentación de equipo a producir, especificaciones:
 
 III. Esquema del funcionamiento
 
-      Acondicionamiento  -->  CodeWarrior  -->  Processing
+   Acondicionamiento  -->  CodeWarrior  -->  Processing
+
+IV.	Modificaciones Introducidas y Justificación
+  
+  A.	Desentramado del protocolo en Processing: 
+   
+   Inicialmente, el desentramado se realizaba haciendo shift a la izquierda 26 veces en U1 (o H1), luego shift a la derecha 20 veces del mismo; despues de esto, para U2 (o H2) se hacia shift a la izquierda 26 veces y luego 26 veces a la derecha, pra finalmente hacer un OR entre ambos para asi obtener un canal analogico. Para los canales digitales, luego de shiftear U1 y U2 25 veces a la izquierda, se shifteaban 31 veces a la derecha, y se realizaba un AND con 1. Por ejemplo:
+        
+U1 = 00000000000000000000000010110011
+U2 = 00000000000000000000000001100110
+
+  a. Shifteo a la izquierda de U1:
+  U1a = 11001100000000000000000000000000
+
+  b. Shifteo a la derecha de U1:
+  U1b = 00000000000000000000110011000000
+
+  c. Shifteo a la izquierda de U2:
+  U2a = 10011000000000000000000000000000
+
+  d. Shifteo a la derecha de U2:
+  U2b = 00000000000000000000000000100110
+
+  e. OR entre U1b y U2b:
+  CH1 = 00000000000000000000110011100110
+
+   La razón por la que se decidió cambiar es que muchas veces al shiftear a la izquierda 26 veces, ocurría un "overflow" (se solicitaba un dato mayor del que podía guardar un int), y el programa retornaba un int de la máxima capacidad (32 "1"s seguidos). El desentramado implementado que se explico anteriormente con cuenta con dicho problema. 
+   
+   
