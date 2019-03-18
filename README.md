@@ -94,7 +94,27 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
    
   https://publicdomainvectors.org/es/vectoriales-gratuitas/Estilizada-ilustraci%C3%B3n-de-vector-frontal-del-osciloscopio/28191.html
    
-  Los detalles de cómo se realizó este procedimiento se encuentran descritas en el código correspondiente.  
+  Un ejemplo de como se realizó el desentramado es el siguiente. Si se recibieron los bits del ejemplo anterior, se realizan las siguientes operaciones: 
+  
+  a. Realizo un AND de U1 con 00111111:
+  
+  U1a = 00000000000000000000000000110011
+
+  b. Shifteo U1a 6 veces a la derecha:
+  
+  U1b = 00000000000000000000110011000000
+
+  c. Realizo un AND de U2 con 00111111:
+  
+  U2a = 00000000000000000000000000110110
+
+  d. OR entre U1b y U2a:
+  
+  CH1 = 00000000000000000000110011100110
+  
+  El procedimiento se mantuvo para el CH2, y para los canales digitales se realizó un procedimiento similar.
+  
+  Los detalles de cómo se realizó la interfaz gráfica se encuentran descritas en el código correspondiente.  
    
 ## V.	Modificaciones Introducidas y Justificación
   
