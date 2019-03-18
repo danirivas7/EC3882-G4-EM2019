@@ -78,11 +78,17 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
    
    H2 = 10100011 
 
-   Entonces en cada uno de estos, el bit más significativo es una *"flag"*, que al comenzar con 0 implica que es el primer Byte de la cadena que se enviará (U1), por lo que los demás bytes comienzan con 1 (U2, H1, H2). El segundo bit más significativo en U1 y U2 es un canal digital, mientras que en H1 y H2 no significan nada. Los 6 bits restantes de cada byte es una mitad de la información que va en cada canal analógico, de manera que U1 y U2 forman el CH1, y H1 y H2 forman el CH2.
+   Entonces en cada uno de estos, el bit más significativo es una *"flag"*, que al comenzar con 0 implica que es el primer Byte de la cadena que se enviará (U1), por lo que los demás bytes comienzan con 1 (U2, H1, H2). El segundo bit más significativo en U1 y U2 es un canal digital, mientras que en H1 y H2 no significan nada. Los 6 bits restantes de cada byte es una mitad de la información que va en cada canal analógico, de manera que U1 y U2 forman el CH1, y H1 y H2 forman el CH2. Resultando con los valores del ejemplo anterior:
+   
+   CH1 = 110010110110
+   
+   CH2 = 011001100011
    
    La forma en que se ajustaron los datos recibidos a este protocolo se explica con mayor detalle en el código correspondiente. 
    
-  ### C.  Processing: 
+   En esta etapa, también es importante definir el número de muestras que se tomarán. En este caso, se toman 2000 muestras por segundo. Esto implica que para una señal de 10Hz, se grafican 200 muestras por periodo; para 100Hz, serían 20 muestras por periodo. A 1kHz, graficaríamos 2 muestras y a 10kHz, observariamos una señal con buena forma, pero a distinta frecuencia (ya que es cíclico).
+   
+  #### C.  Processing: 
   
    En este programa, se realizó el código para programar el DEMOQE128. Para este, se tomo en cuenta la manera en que se reciben los datos para ajustarlas al siguiente protocolo: 
    
@@ -91,6 +97,7 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
    U1 = 01110010
    
    U2 = 10110110
+   
    
 ## V.	Modificaciones Introducidas y Justificación
   
