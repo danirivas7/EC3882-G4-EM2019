@@ -96,19 +96,19 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
    
   Un ejemplo de como se realizó el desentramado es el siguiente. Si se recibieron los bits del ejemplo anterior, se realizan las siguientes operaciones: 
   
-  a. Realizo un AND de U1 con 00111111:
+  1. Realizo un AND de U1 con 00111111:
   
   U1a = 00000000000000000000000000110011
 
-  b. Shifteo U1a 6 veces a la derecha:
+  2. Shifteo U1a 6 veces a la derecha:
   
   U1b = 00000000000000000000110011000000
 
-  c. Realizo un AND de U2 con 00111111:
+  3. Realizo un AND de U2 con 00111111:
   
   U2a = 00000000000000000000000000110110
 
-  d. OR entre U1b y U2a:
+  4. OR entre U1b y U2a:
   
   CH1 = 00000000000000000000110011100110
   
@@ -126,23 +126,23 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
 
   U2 = 0000000000000000000000011100110
 
-  a. Shifteo a la izquierda de U1:
+  1. Shifteo a la izquierda de U1:
   
   U1a = 11001100000000000000000000000000
 
-  b. Shifteo a la derecha de U1:
+  2. Shifteo a la derecha de U1:
   
   U1b = 00000000000000000000110011000000
 
-  c. Shifteo a la izquierda de U2:
+  3. Shifteo a la izquierda de U2:
   
   U2a = 10011000000000000000000000000000
 
-  d. Shifteo a la derecha de U2:
+  4. Shifteo a la derecha de U2:
   
   U2b = 00000000000000000000000000100110
 
-  e. OR entre U1b y U2b:
+  5. OR entre U1b y U2b:
   
   CH1 = 00000000000000000000110011100110
 
