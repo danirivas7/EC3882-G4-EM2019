@@ -38,13 +38,23 @@ III. Esquema del funcionamiento
 
    Acondicionamiento  -->  CodeWarrior  -->  Processing
 
-IV.	Modificaciones Introducidas y Justificación
+IV.	Funcionamiento general del Proyecto
+  
+  A.	Acondicionamiento: 
+   
+   En la imagen "Esquemático - Circuito Protección.PNG" que se encuentra anexa, se presenta el circuito que se montó con el objetivo de acondicionar la señal. Este se utiliza para proteger la tarjeta DEMOQE128 ante una posible entrada de voltaje mayor a la que este soporta, consiste en:
+      1. Un integrado de 4 amplificadores operacionales alimentados con 5V para que, si en la entrada de este hay un voltaje mayor a 5V, este se queme para proteger la tarjeta. De igual manera, a la salida de este se encuentra una resistencia de protección y un diodo zener que limita la salida a máximo 3V.
+      2. Un integrado que consiste en un inversor lógico que a su salida tiene un divisor de voltaje seguido de una resistencia de protección y un diodo zener que limita la salida a máximo 3V.
+
+
+V.	Modificaciones Introducidas y Justificación
   
   A.	Desentramado del protocolo en Processing: 
    
    Inicialmente, el desentramado se realizaba haciendo shift a la izquierda 26 veces en U1 (o H1), luego shift a la derecha 20 veces del mismo; despues de esto, para U2 (o H2) se hacia shift a la izquierda 26 veces y luego 26 veces a la derecha, pra finalmente hacer un OR entre ambos para asi obtener un canal analogico. Para los canales digitales, luego de shiftear U1 y U2 25 veces a la izquierda, se shifteaban 31 veces a la derecha, y se realizaba un AND con 1. Por ejemplo:
         
 U1 = 00000000000000000000000010110011
+
 U2 = 00000000000000000000000001100110
 
   a. Shifteo a la izquierda de U1:
