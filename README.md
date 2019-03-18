@@ -68,18 +68,39 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
   
    En este programa, se realizó el código para programar el DEMOQE128. Para este, se tomo en cuenta la manera en que se reciben los datos para ajustarlas al siguiente protocolo: 
    
-   Si son 4 Bytes: 
+   Si son 4 Bytes, por ejemplo: 
    
+   U1 = 01110010
+   
+   U2 = 10110110
+   
+   H1 = 11011001
+   
+   H2 = 10100011 
 
+   Entonces en cada uno de estos, el bit más significativo es una *"flag"*, que al comenzar con 0 implica que es el primer Byte de la cadena que se enviará (U1), por lo que los demás bytes comienzan con 1 (U2, H1, H2). El segundo bit más significativo en U1 y U2 es un canal digital, mientras que en H1 y H2 no significan nada. Los 6 bits restantes de cada byte es una mitad de la información que va en cada canal analógico, de manera que U1 y U2 forman el CH1, y H1 y H2 forman el CH2.
+   
+   La forma en que se ajustaron los datos recibidos a este protocolo se explica con mayor detalle en el código correspondiente. 
+   
+  ### C.  Processing: 
+  
+   En este programa, se realizó el código para programar el DEMOQE128. Para este, se tomo en cuenta la manera en que se reciben los datos para ajustarlas al siguiente protocolo: 
+   
+   Si son 4 Bytes, por ejemplo: 
+   
+   U1 = 01110010
+   
+   U2 = 10110110
+   
 ## V.	Modificaciones Introducidas y Justificación
   
   #### A.	Desentramado del protocolo en Processing: 
    
    Inicialmente, el desentramado se realizaba haciendo shift a la izquierda 26 veces en U1 (o H1), luego shift a la derecha 20 veces del mismo; despues de esto, para U2 (o H2) se hacia shift a la izquierda 26 veces y luego 26 veces a la derecha, pra finalmente hacer un OR entre ambos para asi obtener un canal analogico. Para los canales digitales, luego de shiftear U1 y U2 25 veces a la izquierda, se shifteaban 31 veces a la derecha, y se realizaba un AND con 1. Por ejemplo:
         
-  U1 = 00000000000000000000000010110011
+  U1 = 00000000000000000000000001110011
 
-  U2 = 00000000000000000000000001100110
+  U2 = 0000000000000000000000011100110
 
   a. Shifteo a la izquierda de U1:
   
