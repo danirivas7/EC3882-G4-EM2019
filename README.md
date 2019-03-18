@@ -9,16 +9,16 @@ Proyectos realizados para la materia EC3882: Laboratorio de Proyectos 2.
 
 **Profesor:** 
 
->Novel Certad
+> Novel Certad
 
 
 # PROYECTO I: OSCILOSCOPIO DIGITAL 
 
-Objetivo: la realización de un osciloscopio digital, a través de una tarjeta de desarrollo de bajo costo y de alto rendimiento (DEMOQE128), y una interfaz amigable para el usuario realizada en el programa Processing. Las señales a probar en el osciloscopio digital provendrán de un generador de funciones, cuya señal será acondicionada para proteger la tarjeta.
+Objetivo: la realización de un osciloscopio digital, a través de una tarjeta de desarrollo de bajo costo y de alto rendimiento (*DEMOQE128*), y una interfaz amigable para el usuario realizada en el programa Processing. Las señales a probar en el osciloscopio digital provendrán de un generador de funciones, cuya señal será acondicionada para proteger la tarjeta.
 
 ## I.	Resumen: 
 
-   Una vez acondicionada la señal, esta se recibe por el DEMOQE128, y este envía la señal a través del puerto serial empleando el protocolo RS-232. Sin embargo, la resolución del canal analógico es de 12 bits; por lo que se deben acomodar los 12 bits de cada canal en bytes en CodeWarrior, luego de habilitar las entradas y determinar el muestreo. Finalmente, a través de Processing se toman los bytes enviados, se arreglan nuevamente en sus 12 bits originales, y se grafican de manera que cumplan con los requisitos del proyecto.
+   Una vez acondicionada la señal, esta se recibe por el *DEMOQE128*, y este envía la señal a través del puerto serial empleando el protocolo *RS-232*. Sin embargo, la resolución del canal analógico es de 12 bits; por lo que se deben acomodar los 12 bits de cada canal en bytes en CodeWarrior, luego de habilitar las entradas y determinar el muestreo. Finalmente, a través de Processing se toman los bytes enviados, se arreglan nuevamente en sus 12 bits originales, y se grafican de manera que cumplan con los requisitos del proyecto.
 
 ## II.	Presentación de equipo a producir, especificaciones:
 
@@ -57,7 +57,7 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
   
   #### A.	Acondicionamiento: 
    
-   En la imagen "Esquemático - Circuito Protección.png" que se encuentra anexa, se presenta el circuito que se montó con el objetivo de acondicionar la señal. Este se utiliza para proteger la tarjeta DEMOQE128 ante una posible entrada de voltaje mayor a la que este soporta, consiste en:
+   En la imagen *"Esquemático - Circuito Protección.png"* que se encuentra anexa, se presenta el circuito que se montó con el objetivo de acondicionar la señal. Este se utiliza para proteger la tarjeta *DEMOQE128* ante una posible entrada de voltaje mayor a la que este soporta, consiste en:
    
    1. Un integrado de 4 amplificadores operacionales alimentados con 5V para que, si en la entrada de este hay un voltaje mayor a 5V, este se queme para proteger la tarjeta. De igual manera, a la salida de este se encuentra una resistencia de protección y un diodo zener que limita la salida a máximo 3V.
       
@@ -66,7 +66,7 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
 
   #### B.  CodeWarrior: 
 
-   En este programa, se realizó el código para programar el DEMOQE128. Para este, se tomo en cuenta la manera en que se reciben los datos para ajustarlas al siguiente protocolo: 
+   En este programa, se realizó el código para programar el *DEMOQE128*. Para este, se tomo en cuenta la manera en que se reciben los datos para ajustarlas al siguiente protocolo: 
    
    Si son 4 Bytes, por ejemplo: 
    
@@ -90,7 +90,7 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
    
   #### C.  Processing: 
   
-   En este programa, se desentramaron los 4 bytes recibidos para formar los 12 bits de los canales analógicos, el bit de cada canal digital y determinar el valor de cada uno. Luego de esto, se diseñó una interfaz gráfica amigable para el usuario, utilizando como base una imagen que se encuentra anexa llamada "Osciloscopio Digital.jpg", encontrada en el siguiente link: 
+   En este programa, se desentramaron los 4 bytes recibidos para formar los 12 bits de los canales analógicos, el bit de cada canal digital y determinar el valor de cada uno. Luego de esto, se diseñó una interfaz gráfica amigable para el usuario, utilizando como base una imagen que se encuentra anexa llamada *"Osciloscopio Digital.jpg"*, encontrada en el siguiente link: 
    
   https://publicdomainvectors.org/es/vectoriales-gratuitas/Estilizada-ilustraci%C3%B3n-de-vector-frontal-del-osciloscopio/28191.html
    
@@ -146,10 +146,9 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
   
   CH1 = 00000000000000000000110011100110
 
-   La razón por la que se decidió cambiar es que muchas veces al shiftear a la izquierda 26 veces, ocurría un "overflow" (se solicitaba un dato mayor del que podía guardar un int), y el programa retornaba un int de la máxima capacidad (32 "1"s seguidos). El desentramado implementado que se explico anteriormente con cuenta con dicho problema. 
+   La razón por la que se decidió cambiar es que muchas veces al shiftear a la izquierda 26 veces, ocurría un *"overflow"* (se solicitaba un dato mayor del que podía guardar un int), y el programa retornaba un int de la máxima capacidad (32 "1"s seguidos). El desentramado implementado que se explico anteriormente con cuenta con dicho problema. 
    
 #### B.  Se colocaron dos opciones para graficar:
 
-  En las primeras versiones del código, se graficaba utilizando la función de Processing llamada "line"; sin embargo, debido a que era un requerimiento y era otro tipo de visualización de la señal (que permite ver el número de puntos que se grafican por escala), se decidió agregar además la función "point".
-
+  En las primeras versiones del código, se graficaba utilizando la función de Processing llamada *"line"*; sin embargo, debido a que era un requerimiento y era otro tipo de visualización de la señal (que permite ver el número de puntos que se grafican por escala), se decidió agregar además la función *"point"*.
 
