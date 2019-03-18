@@ -64,4 +64,4 @@ U2 = 00000000000000000000000001100110
 
    La razón por la que se decidió cambiar es que muchas veces al shiftear a la izquierda 26 veces, ocurría un "overflow" (se solicitaba un dato mayor del que podía guardar un int), y el programa retornaba un int de la máxima capacidad (32 "1"s seguidos). El desentramado implementado que se explico anteriormente con cuenta con dicho problema. 
    
-   
+	   
