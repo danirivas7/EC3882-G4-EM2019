@@ -57,7 +57,7 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
   
   #### A.	Acondicionamiento: 
    
-   En la imagen "Esquemático - Circuito Protección.PNG" que se encuentra anexa, se presenta el circuito que se montó con el objetivo de acondicionar la señal. Este se utiliza para proteger la tarjeta DEMOQE128 ante una posible entrada de voltaje mayor a la que este soporta, consiste en:
+   En la imagen "Esquemático - Circuito Protección.png" que se encuentra anexa, se presenta el circuito que se montó con el objetivo de acondicionar la señal. Este se utiliza para proteger la tarjeta DEMOQE128 ante una posible entrada de voltaje mayor a la que este soporta, consiste en:
    
    1. Un integrado de 4 amplificadores operacionales alimentados con 5V para que, si en la entrada de este hay un voltaje mayor a 5V, este se queme para proteger la tarjeta. De igual manera, a la salida de este se encuentra una resistencia de protección y un diodo zener que limita la salida a máximo 3V.
       
@@ -65,7 +65,7 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
       
 
   #### B.  CodeWarrior: 
-  
+
    En este programa, se realizó el código para programar el DEMOQE128. Para este, se tomo en cuenta la manera en que se reciben los datos para ajustarlas al siguiente protocolo: 
    
    Si son 4 Bytes, por ejemplo: 
@@ -90,14 +90,11 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
    
   #### C.  Processing: 
   
-   En este programa, se realizó el código para programar el DEMOQE128. Para este, se tomo en cuenta la manera en que se reciben los datos para ajustarlas al siguiente protocolo: 
+   En este programa, se desentramaron los 4 bytes recibidos para formar los 12 bits de los canales analógicos, el bit de cada canal digital y determinar el valor de cada uno. Luego de esto, se diseñó una interfaz gráfica amigable para el usuario, utilizando como base una imagen que se encuentra anexa llamada "Osciloscopio Digital.jpg", encontrada en el siguiente link: 
    
-   Si son 4 Bytes, por ejemplo: 
+  https://publicdomainvectors.org/es/vectoriales-gratuitas/Estilizada-ilustraci%C3%B3n-de-vector-frontal-del-osciloscopio/28191.html
    
-   U1 = 01110010
-   
-   U2 = 10110110
-   
+  Los detalles de cómo se realizó este procedimiento se encuentran descritas en el código correspondiente.  
    
 ## V.	Modificaciones Introducidas y Justificación
   
