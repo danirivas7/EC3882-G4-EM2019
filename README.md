@@ -66,4 +66,4 @@ U2 = 00000000000000000000000001100110
    
 B.  Se colocaron dos opciones para graficar:
 
-  En las primeras versiones del código, se graficaba utilizando la función de Processing llamada "line"
+  En las primeras versiones del código, se graficaba utilizando la función de Processing llamada "line"; sin embargo, debido a que era un requerimiento
