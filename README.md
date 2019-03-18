@@ -67,3 +67,5 @@ U2 = 00000000000000000000000001100110
 B.  Se colocaron dos opciones para graficar:
 
   En las primeras versiones del código, se graficaba utilizando la función de Processing llamada "line"; sin embargo, debido a que era un requerimiento y era otro tipo de visualización de la señal (que permite ver el número de puntos que se grafican por escala), se decidió agregar además la función "point".
+
+
