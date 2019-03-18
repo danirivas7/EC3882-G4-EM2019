@@ -70,19 +70,19 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
    
    Si son 4 Bytes, por ejemplo: 
    
-   U1 = 01110010
+   1. U1 = 01110010
    
-   U2 = 10110110
+   2. U2 = 10110110
    
-   H1 = 11011001
+   3. H1 = 11011001
    
-   H2 = 10100011 
+   4. H2 = 10100011 
 
    Entonces en cada uno de estos, el bit más significativo es una *"flag"*, que al comenzar con 0 implica que es el primer Byte de la cadena que se enviará (U1), por lo que los demás bytes comienzan con 1 (U2, H1, H2). El segundo bit más significativo en U1 y U2 es un canal digital, mientras que en H1 y H2 no significan nada. Los 6 bits restantes de cada byte es una mitad de la información que va en cada canal analógico, de manera que U1 y U2 forman el CH1, y H1 y H2 forman el CH2. Resultando con los valores del ejemplo anterior:
    
-   CH1 = 110010110110
+   1. CH1 = 110010110110
    
-   CH2 = 011001100011
+   2. CH2 = 011001100011
    
    La forma en que se ajustaron los datos recibidos a este protocolo se explica con mayor detalle en el código correspondiente. 
    
