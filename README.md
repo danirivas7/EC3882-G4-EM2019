@@ -10,15 +10,15 @@ Profesor: Novel Certad
 
 
 
-PROYECTO I: OSCILOSCOPIO DIGITAL 
+# PROYECTO I: OSCILOSCOPIO DIGITAL 
 
 Objetivo: la realización de un osciloscopio digital, a través de una tarjeta de desarrollo de bajo costo y de alto rendimiento (DEMOQE128), y una interfaz amigable para el usuario realizada en el programa Processing. Las señales a probar en el osciloscopio digital provendrán de un generador de funciones, cuya señal será acondicionada para proteger la tarjeta.
 
-I.	Resumen: 
+## I.	Resumen: 
 
    Una vez acondicionada la señal, esta se recibe por el DEMOQE128, y este envía la señal a través del puerto serial empleando el protocolo RS-232. Sin embargo, la resolución del canal analógico es de 12 bits; por lo que se deben acomodar los 12 bits de cada canal en bytes en CodeWarrior, luego de habilitar las entradas y determinar el muestreo. Finalmente, a través de Processing se toman los bytes enviados, se arreglan nuevamente en sus 12 bits originales, y se grafican de manera que cumplan con los requisitos del proyecto.
 
-II.	Presentación de equipo a producir, especificaciones:
+## II.	Presentación de equipo a producir, especificaciones:
 
   A.	Bloque de acondicionamiento:
       1.	Regulador de 5V.
@@ -34,11 +34,11 @@ II.	Presentación de equipo a producir, especificaciones:
       5.	Selector de base de tiempo de 3 niveles: 10Hz, 100Hz, 1kHz.
       6.	Selector de amplitud de 3 niveles: 0.3V, 1.0V, 3.0V.
 
-III. Esquema del funcionamiento
+## III. Esquema del funcionamiento
 
    Acondicionamiento  -->  CodeWarrior  -->  Processing
 
-IV.	Funcionamiento general del Proyecto
+## IV.	Funcionamiento general del Proyecto
   
   A.	Acondicionamiento: 
    
@@ -46,8 +46,12 @@ IV.	Funcionamiento general del Proyecto
       1. Un integrado de 4 amplificadores operacionales alimentados con 5V para que, si en la entrada de este hay un voltaje mayor a 5V, este se queme para proteger la tarjeta. De igual manera, a la salida de este se encuentra una resistencia de protección y un diodo zener que limita la salida a máximo 3V.
       2. Un integrado que consiste en un inversor lógico que a su salida tiene un divisor de voltaje seguido de una resistencia de protección y un diodo zener que limita la salida a máximo 3V.
 
+  B.  CodeWarrior: 
+  
+   En este programa, se realizó el código para programar el DEMOQE128. Para este, se tomo en cuenta la manera en que se reciben los datos para ajustarlas al siguiente protocolo: Si son 4 Bytes:
+   
 
-V.	Modificaciones Introducidas y Justificación
+## V.	Modificaciones Introducidas y Justificación
   
   A.	Desentramado del protocolo en Processing: 
    
