@@ -88,6 +88,8 @@ Objetivo: la realización de un osciloscopio digital, a través de una tarjeta d
    
    En esta etapa, también es importante definir el número de muestras que se tomarán. En este caso, se toman 2000 muestras por segundo. Esto implica que para una señal de 10Hz, se grafican 200 muestras por periodo; para 100Hz, serían 20 muestras por periodo. A 1kHz, graficaríamos 2 muestras y a 10kHz, observariamos una señal con buena forma, pero a distinta frecuencia (ya que es cíclico).
    
+   > Nota: Para poder probar en el osciloscopio la frecuencia de muestreo (que se encuentra a 2kHz), el pin PTD6_KBI2P6 niega su valor, resultando una onda cuadrada de 1kHz.
+   
   #### C.  Processing: 
   
    En este programa, se desentramaron los 4 bytes recibidos para formar los 12 bits de los canales analógicos, el bit de cada canal digital y determinar el valor de cada uno. Luego de esto, se diseñó una interfaz gráfica amigable para el usuario, utilizando como base una imagen que se encuentra anexa llamada *"Osciloscopio Digital.jpg"*, encontrada en el siguiente link: 
