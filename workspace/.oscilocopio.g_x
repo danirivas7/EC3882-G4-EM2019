@@ -1,0 +1,47 @@
+<CodeGenerationInfo>
+  <ToolchainSettings>
+    <option>
+      <name>PE_G_4PEx_ToolChain_Compiler_SearchUserPaths</name>
+      <values lines_count="2">
+        <Line>"${ProjDirPath}/Sources"</Line>
+        <Line>"${ProjDirPath}/Generated_Code"</Line>
+      </values>
+    </option>
+  </ToolchainSettings>
+  <GeneratedFilesList>
+    <GeneratedByPE>
+      <File Name="Generated_Code/Bit3.c" FileDate="2019-03-17, 16:25:53" FileAge="1552856153201" FileType="45637" CompNumb="37" />
+      <File Name="Generated_Code/Cpu.c" FileDate="2019-03-17, 17:19:35" FileAge="1552859375936" FileType="45637" CompNumb="4" />
+      <File Name="Generated_Code/Vectors.c" FileDate="2019-03-17, 17:19:35" FileAge="1552859375942" FileType="45637" CompNumb="4" />
+      <File Name="Documentation/oscilocopio_Settings.xml" FileDate="2019-03-17, 17:19:36" FileAge="1552859376033" FileType="3072" />
+      <File Name="Generated_Code/AD1.h" FileDate="2019-03-06, 10:03:53" FileAge="1551882833149" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/TI2.h" FileDate="2019-03-17, 16:54:00" FileAge="1552857840337" FileType="45637" CompNumb="41" />
+      <File Name="Project_Settings/Linker_Files/ProcessorExpert.prm" FileDate="2019-02-25, 10:53:55" FileAge="1551108235927" FileType="8" CompNumb="4" />
+      <File Name="Generated_Code/Bit2.h" FileDate="2019-02-25, 13:43:25" FileAge="1551118405385" FileType="45637" CompNumb="24" />
+      <File Name="Generated_Code/AD1.c" FileDate="2019-03-06, 10:03:53" FileAge="1551882833172" FileType="45637" CompNumb="8" />
+      <File Name="Generated_Code/TI2.c" FileDate="2019-03-17, 16:54:00" FileAge="1552857840330" FileType="45637" CompNumb="41" />
+      <File Name="Generated_Code/Bit4.h" FileDate="2019-03-17, 17:19:35" FileAge="1552859375859" FileType="45637" CompNumb="42" />
+      <File Name="Generated_Code/Bit2.c" FileDate="2019-02-25, 13:43:25" FileAge="1551118405377" FileType="45637" CompNumb="24" />
+      <File Name="Generated_Code/PE_Const.h" FileDate="2019-02-25, 10:53:55" FileAge="1551108235977" FileType="45637" />
+      <File Name="Generated_Code/AS1.h" FileDate="2019-02-25, 12:39:39" FileAge="1551114579914" FileType="45637" CompNumb="9" />
+      <File Name="Generated_Code/Bit4.c" FileDate="2019-03-17, 17:19:35" FileAge="1552859375851" FileType="45637" CompNumb="42" />
+      <File Name="Generated_Code/AS1.c" FileDate="2019-02-25, 12:39:39" FileAge="1551114579962" FileType="45637" CompNumb="9" />
+      <File Name="Sources/Events.h" FileDate="2019-03-17, 17:19:35" FileAge="1552859375954" FileType="131328" />
+      <File Name="Generated_Code/PE_Types.h" FileDate="2019-02-25, 10:53:55" FileAge="1551108235987" FileType="45637" />
+      <File Name="Generated_Code/TI1.h" FileDate="2019-03-05, 10:49:33" FileAge="1551799173725" FileType="45637" CompNumb="10" />
+      <File Name="Sources/main.c" FileDate="2019-03-17, 17:19:35" FileAge="1552859375886" FileType="128" />
+      <File Name="Generated_Code/Bit1.h" FileDate="2019-02-25, 13:41:48" FileAge="1551118308282" FileType="45637" CompNumb="23" />
+      <File Name="Sources/Events.c" FileDate="2019-03-17, 17:05:59" FileAge="1552858559290" FileType="131328" />
+      <File Name="Documentation/oscilocopio_SIGNALS.txt" FileDate="2019-03-17, 17:19:35" FileAge="1552859375983" FileType="3072" />
+      <File Name="Generated_Code/IO_Map.h" FileDate="2019-02-25, 10:53:55" FileAge="1551108235967" FileType="45637" />
+      <File Name="Generated_Code/TI1.c" FileDate="2019-03-05, 10:49:33" FileAge="1551799173735" FileType="45637" CompNumb="10" />
+      <File Name="Generated_Code/Bit3.h" FileDate="2019-03-17, 16:25:53" FileAge="1552856153204" FileType="45637" CompNumb="37" />
+      <File Name="Generated_Code/Bit1.c" FileDate="2019-02-25, 13:41:48" FileAge="1551118308276" FileType="45637" CompNumb="23" />
+      <File Name="Documentation/oscilocopio.txt" FileDate="2019-03-17, 17:19:36" FileAge="1552859376060" FileType="3072" />
+      <File Name="Generated_Code/Cpu.h" FileDate="2019-03-17, 17:19:35" FileAge="1552859375919" FileType="45637" CompNumb="4" />
+      <File Name="Generated_Code/PE_Error.h" FileDate="2019-02-25, 10:53:55" FileAge="1551108235977" FileType="45637" />
+      <File Name="Generated_Code/IO_Map.c" FileDate="2019-02-25, 10:53:55" FileAge="1551108235957" FileType="45637" />
+    </GeneratedByPE>
+  </GeneratedFilesList>
+  <CodeGenReference>31</CodeGenReference>
+</CodeGenerationInfo>
