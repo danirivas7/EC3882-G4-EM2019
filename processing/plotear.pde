@@ -49,7 +49,7 @@ int V2X = 842;
 int POWX = 842;
 int POWY = 179;
 
-int factorY=7; //ese es el factor para cambiar la escala el voltaje
+int factorY=30; //ese es el factor para cambiar la escala el voltaje
 int factorY2=61; //ese es el factor para cambiar la escala el voltaje
 
 int origenY=229; //fijo el origen que emplearemos
