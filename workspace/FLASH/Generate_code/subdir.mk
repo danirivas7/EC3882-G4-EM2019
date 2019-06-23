@@ -11,9 +11,9 @@ C_SRCS_QUOTED += \
 "../Generated_Code/Bit1.c" \
 "../Generated_Code/Bit2.c" \
 "../Generated_Code/Bit3.c" \
-"../Generated_Code/Bit4.c" \
 "../Generated_Code/Cpu.c" \
 "../Generated_Code/IO_Map.c" \
+"../Generated_Code/KB1.c" \
 "../Generated_Code/TI1.c" \
 "../Generated_Code/TI2.c" \
 "../Generated_Code/Vectors.c" \
@@ -24,9 +24,9 @@ C_SRCS += \
 ../Generated_Code/Bit1.c \
 ../Generated_Code/Bit2.c \
 ../Generated_Code/Bit3.c \
-../Generated_Code/Bit4.c \
 ../Generated_Code/Cpu.c \
 ../Generated_Code/IO_Map.c \
+../Generated_Code/KB1.c \
 ../Generated_Code/TI1.c \
 ../Generated_Code/TI2.c \
 ../Generated_Code/Vectors.c \
@@ -37,9 +37,9 @@ OBJS += \
 ./Generated_Code/Bit1_c.obj \
 ./Generated_Code/Bit2_c.obj \
 ./Generated_Code/Bit3_c.obj \
-./Generated_Code/Bit4_c.obj \
 ./Generated_Code/Cpu_c.obj \
 ./Generated_Code/IO_Map_c.obj \
+./Generated_Code/KB1_c.obj \
 ./Generated_Code/TI1_c.obj \
 ./Generated_Code/TI2_c.obj \
 ./Generated_Code/Vectors_c.obj \
@@ -50,9 +50,9 @@ OBJS_QUOTED += \
 "./Generated_Code/Bit1_c.obj" \
 "./Generated_Code/Bit2_c.obj" \
 "./Generated_Code/Bit3_c.obj" \
-"./Generated_Code/Bit4_c.obj" \
 "./Generated_Code/Cpu_c.obj" \
 "./Generated_Code/IO_Map_c.obj" \
+"./Generated_Code/KB1_c.obj" \
 "./Generated_Code/TI1_c.obj" \
 "./Generated_Code/TI2_c.obj" \
 "./Generated_Code/Vectors_c.obj" \
@@ -63,9 +63,9 @@ C_DEPS += \
 ./Generated_Code/Bit1_c.d \
 ./Generated_Code/Bit2_c.d \
 ./Generated_Code/Bit3_c.d \
-./Generated_Code/Bit4_c.d \
 ./Generated_Code/Cpu_c.d \
 ./Generated_Code/IO_Map_c.d \
+./Generated_Code/KB1_c.d \
 ./Generated_Code/TI1_c.d \
 ./Generated_Code/TI2_c.d \
 ./Generated_Code/Vectors_c.d \
@@ -76,9 +76,9 @@ C_DEPS_QUOTED += \
 "./Generated_Code/Bit1_c.d" \
 "./Generated_Code/Bit2_c.d" \
 "./Generated_Code/Bit3_c.d" \
-"./Generated_Code/Bit4_c.d" \
 "./Generated_Code/Cpu_c.d" \
 "./Generated_Code/IO_Map_c.d" \
+"./Generated_Code/KB1_c.d" \
 "./Generated_Code/TI1_c.d" \
 "./Generated_Code/TI2_c.d" \
 "./Generated_Code/Vectors_c.d" \
@@ -89,9 +89,9 @@ OBJS_OS_FORMAT += \
 ./Generated_Code/Bit1_c.obj \
 ./Generated_Code/Bit2_c.obj \
 ./Generated_Code/Bit3_c.obj \
-./Generated_Code/Bit4_c.obj \
 ./Generated_Code/Cpu_c.obj \
 ./Generated_Code/IO_Map_c.obj \
+./Generated_Code/KB1_c.obj \
 ./Generated_Code/TI1_c.obj \
 ./Generated_Code/TI2_c.obj \
 ./Generated_Code/Vectors_c.obj \
@@ -143,17 +143,9 @@ Generated_Code/Bit3_c.obj: ../Generated_Code/Bit3.c
 	@echo 'Finished building: $<'
 	@echo ' '
 
-Generated_Code/Bit4_c.obj: ../Generated_Code/Bit4.c
-	@echo 'Building file: $<'
-	@echo 'Executing target #9 $<'
-	@echo 'Invoking: HCS08 Compiler'
-	"$(HC08ToolsEnv)/chc08" -ArgFile"Generated_Code/Bit4.args" -ObjN="Generated_Code/Bit4_c.obj" "$<" -Lm="$(@:%.obj=%.d)" -LmCfg=xilmou
-	@echo 'Finished building: $<'
-	@echo ' '
-
 Generated_Code/Cpu_c.obj: ../Generated_Code/Cpu.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #10 $<'
+	@echo 'Executing target #9 $<'
 	@echo 'Invoking: HCS08 Compiler'
 	"$(HC08ToolsEnv)/chc08" -ArgFile"Generated_Code/Cpu.args" -ObjN="Generated_Code/Cpu_c.obj" "$<" -Lm="$(@:%.obj=%.d)" -LmCfg=xilmou
 	@echo 'Finished building: $<'
@@ -161,9 +153,17 @@ Generated_Code/Cpu_c.obj: ../Generated_Code/Cpu.c
 
 Generated_Code/IO_Map_c.obj: ../Generated_Code/IO_Map.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #11 $<'
+	@echo 'Executing target #10 $<'
 	@echo 'Invoking: HCS08 Compiler'
 	"$(HC08ToolsEnv)/chc08" -ArgFile"Generated_Code/IO_Map.args" -ObjN="Generated_Code/IO_Map_c.obj" "$<" -Lm="$(@:%.obj=%.d)" -LmCfg=xilmou
+	@echo 'Finished building: $<'
+	@echo ' '
+
+Generated_Code/KB1_c.obj: ../Generated_Code/KB1.c
+	@echo 'Building file: $<'
+	@echo 'Executing target #11 $<'
+	@echo 'Invoking: HCS08 Compiler'
+	"$(HC08ToolsEnv)/chc08" -ArgFile"Generated_Code/KB1.args" -ObjN="Generated_Code/KB1_c.obj" "$<" -Lm="$(@:%.obj=%.d)" -LmCfg=xilmou
 	@echo 'Finished building: $<'
 	@echo ' '
 
