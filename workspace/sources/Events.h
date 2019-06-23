@@ -1,11 +1,11 @@
 /* ###################################################################
 **     Filename    : Events.h
-**     Project     : oscilocopio
+**     Project     : Filtro FIR
 **     Processor   : MC9S08QE128CLK
 **     Component   : Events
 **     Version     : Driver 01.02
 **     Compiler    : CodeWarrior HCS08 C Compiler
-**     Date/Time   : 2019-02-25, 10:53, # CodeGen: 0
+**     Date/Time   : 2019-06-15, 14:47, # CodeGen: 0
 **     Abstract    :
 **         This is user's event module.
 **         Put your event handler code here.
@@ -34,27 +34,27 @@
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
-#include "AD1.h"
-#include "AS1.h"
 #include "TI1.h"
+#include "AS1.h"
+#include "AD1.h"
 #include "Bit1.h"
 #include "Bit2.h"
-#include "Bit3.h"
+#include "KB1.h"
 #include "TI2.h"
-#include "Bit4.h"
+#include "Bit3.h"
 
 
-void TI1_OnInterrupt(void);
+void AD1_OnEnd(void);
 /*
 ** ===================================================================
-**     Event       :  TI1_OnInterrupt (module Events)
+**     Event       :  AD1_OnEnd (module Events)
 **
-**     Component   :  TI1 [TimerInt]
+**     Component   :  AD1 [ADC]
 **     Description :
-**         When a timer interrupt occurs this event is called (only
-**         when the component is enabled - <Enable> and the events are
-**         enabled - <EnableEvent>). This event is enabled only if a
-**         <interrupt service/event> is enabled.
+**         This event is called after the measurement (which consists
+**         of <1 or more conversions>) is/are finished.
+**         The event is available only when the <Interrupt
+**         service/event> property is enabled.
 **     Parameters  : None
 **     Returns     : Nothing
 ** ===================================================================
@@ -121,17 +121,17 @@ void AS1_OnFreeTxBuf(void);
 ** ===================================================================
 */
 
-void AD1_OnEnd(void);
+void TI1_OnInterrupt(void);
 /*
 ** ===================================================================
-**     Event       :  AD1_OnEnd (module Events)
+**     Event       :  TI1_OnInterrupt (module Events)
 **
-**     Component   :  AD1 [ADC]
+**     Component   :  TI1 [TimerInt]
 **     Description :
-**         This event is called after the measurement (which consists
-**         of <1 or more conversions>) is/are finished.
-**         The event is available only when the <Interrupt
-**         service/event> property is enabled.
+**         When a timer interrupt occurs this event is called (only
+**         when the component is enabled - <Enable> and the events are
+**         enabled - <EnableEvent>). This event is enabled only if a
+**         <interrupt service/event> is enabled.
 **     Parameters  : None
 **     Returns     : Nothing
 ** ===================================================================
@@ -148,6 +148,36 @@ void TI2_OnInterrupt(void);
 **         when the component is enabled - <Enable> and the events are
 **         enabled - <EnableEvent>). This event is enabled only if a
 **         <interrupt service/event> is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void KB1_OnInterrupt(void);
+/*
+** ===================================================================
+**     Event       :  KB1_OnInterrupt (module Events)
+**
+**     Component   :  KB1 [KBI]
+**     Description :
+**         This event is called when the active signal edge/level
+**         occurs. This event is enabled only if <Interrupt
+**         service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void AS1_OnFullRxBuf(void);
+/*
+** ===================================================================
+**     Event       :  AS1_OnFullRxBuf (module Events)
+**
+**     Component   :  AS1 [AsynchroSerial]
+**     Description :
+**         This event is called when the input buffer is full;
+**         i.e. after reception of the last character 
+**         that was successfully placed into input buffer.
 **     Parameters  : None
 **     Returns     : Nothing
 ** ===================================================================
